@@ -6,7 +6,7 @@ export default function Reviews() {
     const reviews = [review, review]
     return (
         <div className='reviews-section'>
-            <div className='reviews-header'>
+            <div className='header'>
                 <h1>Отзывы</h1>
             </div>
             <div className='reviews-list'>

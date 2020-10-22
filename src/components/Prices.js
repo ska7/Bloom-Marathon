@@ -8,7 +8,7 @@ import fourthPlan from '../img/10000plan.png'
 export default function Prices() {
     return (
         <div className='prices-section'>
-            <div className='prices-header'>
+            <div className='header'>
                 <h1>Тарифы</h1>
             </div>
             <div className='prices-wrapper'>

@@ -5,7 +5,7 @@ import instaFrame from '../img/instagram-frame.png'
 export default function Benefits() {
     return (
         <div className='benefits'>
-            <div className='benefits-header'>
+            <div className='header'>
                 <h1>После марафона ты :</h1>
             </div>
             <div className='benefits-list'>
@@ -16,8 +16,6 @@ export default function Benefits() {
                  <span className='benefit'><b> • Станешь уравновешеной 😌</b></span>
                  <span className='benefit'><b> • Научишься медитировать 🧘</b></span>
             </div>
-            {/* <img src={instaFrame} className='insta-frame'></img> */}
-            <GoToPricing />
         </div>
     )
 }
