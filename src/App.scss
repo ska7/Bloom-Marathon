@@ -71,14 +71,57 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
-  @keyframes arrow {
-    0%{
-      transform: translateY(-4rem);
+    /* NAV BAR */
+
+    .nav-bar {
+      // position: sticky;
+      z-index: 1;
+      // border-bottom: 1px solid #424242;
+      background: rgba(231, 212, 231, 0.5);
+      box-shadow: 0 0 50px 5px rgb(85, 85, 85);
+      top: 0rem;
+      height: 6rem;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      flex: 1;
+      .icon-wrapper {
+        display: flex;
+        min-height: 100%;
+        padding-top: 20px;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        flex: 1;
+        p {
+          padding-top: 2px;
+          font-size: 0.8rem;
+          // color: #333333;
+          color: rgb(0, 0, 0);
+          text-shadow: 0 0 3px rgb(41, 41, 41);
+          
+        }
+  
+        .icon {
+          @include display-column;
+          color: white;
+          height: 4rem;
+          width: 4rem;
+          border: 2px solid #424242;
+          border-radius: 50%;
+          overflow: hidden;
+          // box-shadow: 0 0 20px 1px #424242;
+          img {
+            height: 135%;
+            width: 135%;
+          }
+        }
+      }
     }
-    100%{
-      transform: translateY(2rem);
-    }
-  }
+
+    /* INTRO SECTION */
 
   .intro {
     position: relative;
@@ -193,6 +236,7 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
+
   /* BENEFITS SECTION*/
   .benefits-section {
     position: relative;
@@ -219,7 +263,7 @@ $main-font: 'Amatic SC', cursive;
     }
     .benefits-header {
       text-align: center;
-      background: rgba(39, 39, 39, 0.7);
+      background: rgba(39, 39, 39, 0.8);
       box-shadow: 0 30px 50px 0.5px rgba(128, 128, 128, 0.5);
       // background: linear-gradient(360deg, #212121 0%, #1B1B1B 100%) no-repeat 50% 50% / 100% 100%;
       height: 100px;
@@ -254,31 +298,60 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
-  /* VIEWS SECTION */
+  /* REVIEWS SECTION */
+
+  // REVIEW CARD 
   .review-card-wrapper {
-    position: absolute;
+    position: relative;
+    overflow: visible;
     top: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 100vw;
-    .review-card {
-      margin-right: 100px;
-      height: 500px;
-      max-width: 70%;
-      border-radius: 15px;
-      box-shadow: 2px 10px 20px 3px rgb(133, 133, 133);
-      border: 1px solid rgb(65, 65, 65);
-      background: rgba(204, 204, 204, 0.8);
-      @include display-column;
-      img {
-        height: 100%;
-        width: auto;
+    height: 400px;
+    min-width: 100%;
+    .mask {
+      overflow: hidden;
+      height: 400px;
+      ul {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        li {
+          height: 400px;
+          width: auto;
+          position: absolute;
+          left: -325px;
+          list-style: none;
+          
+        }
+      }
+      .review-card {
+        margin-right: 100px;
+        top: 5%;
+        height: 400px;
+        max-width: 70%;
         border-radius: 15px;
+        box-shadow: 2px 10px 20px 3px rgb(133, 133, 133);
+        border: 1px solid rgb(65, 65, 65);
+        background: rgba(204, 204, 204, 0.8);
+        @include display-column;
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 15px;
+        }
       }
     }
   }
+
+  .card1 {
+    animation: cycletwo 10s linear infinite;
+  }
+
+  .card0 {
+    animation: cycle 10s linear infinite;
+  }
+
+
+ // The rest of the review section
 
   .reviews-section {
     position: relative;
@@ -290,15 +363,15 @@ $main-font: 'Amatic SC', cursive;
     background-attachment: fixed;
     h1 {
       font-size: 30px;
-      padding-top: 27px;
+      padding-top: 15px;
       color: rgb(238, 238, 238);
       font-family: 'Oswald', sans-serif;
     }
     .reviews-header {
       text-align: center;
-      // background: rgb(39, 39, 39);
-      background: linear-gradient(360deg, #212121 0%, #1B1B1B 100%) no-repeat 50% 50% / 100% 100%;
-      height: 100px;
+      background: rgba(39, 39, 39, 0.9);
+      // background: linear-gradient(360deg, #212121 0%, #1B1B1B 100%) no-repeat 50% 50% / 100% 100%;
+      height: 70px;
     }
     .reviews-list {
       margin-top: 100px;
@@ -306,55 +379,117 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
-  /* NAV BAR */
+  /* PRICES SECTION */
 
-  .nav-bar {
-    // position: sticky;
-    z-index: 1;
-    // border-bottom: 1px solid #424242;
-    background: rgba(231, 212, 231, 0.5);
-    box-shadow: 0 0 50px 5px rgb(85, 85, 85);
-    top: 0rem;
-    height: 6rem;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex: 1;
-    .icon-wrapper {
-      display: flex;
-      min-height: 100%;
-      padding-top: 20px;
-      flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      flex: 1;
-      p {
-        padding-top: 2px;
-        font-size: 0.8rem;
-        // color: #333333;
-        color: rgb(0, 0, 0);
-        text-shadow: 0 0 3px rgb(41, 41, 41);
-        
-      }
+  // Price card
+  .prices-wrapper {
+    width: auto;
+    margin-top: 50px;
+    @include display-column;
+  }
+  .price-card {
+    padding-top: 200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    button {
+      font-family: 'Oswald', sans-serif;
+      position: absolute;
+      bottom: 80px;
+      left: 115px;
+      background: rgba(128, 0, 128, 0.5);
+      // color: rgb(216, 216, 216);
+      color: rgb(53, 53, 53);
+      border-radius: 20px;
+      height: 40px;
+      width: 150px;
+    }
+    img {
+      margin-left: 3px;
+      height: 600px;
+      width: 370px;
+    }
+  }
 
-      .icon {
-        @include display-column;
-        color: white;
-        height: 4rem;
-        width: 4rem;
-        border: 2px solid #424242;
-        border-radius: 50%;
-        overflow: hidden;
-        // box-shadow: 0 0 20px 1px #424242;
-        img {
-          height: 135%;
-          width: 135%;
-        }
+  .cardthree img {
+    margin-left: 5px;
+    height: 800px;
+    width: 370px;
+  }
+  
+  .cardfour {
+    img {
+      margin-left: 5px;
+      height: 1050px;
+      width: 370px;
+    }
+    button {
+      position: absolute;
+      bottom: 150px;
+      background: rgba(157,193,193, 0.8);
+      color: rgb(0, 0, 0);
+      width: 250px;
+      left: 0;
+      right:0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  .prices-section {
+    height: auto;
+    // background: url('./img/back-prices.jpg');
+    background: url('./img/back-price-try.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 700px 1200px;
+    // background-size: cover;
+    background-attachment: fixed;
+    .prices-header {
+      height: 70px;
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      color: white;
+      h1 {
+        font-size: 30px;
+        padding-top: 15px;
+        font-family: 'Oswald', sans-serif;
       }
     }
   }
 
-  
 }
+
+/* ANIMATIONS */
+
+@keyframes cycletwo {
+  0%  { left: -325px; opacity: 0; } /* Original Position */
+  16% { left: -325px; opacity: 0; }/* Starts moving after 16% to this position */
+  20% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  24% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
+  36% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; } /* From 24% to 36 % = for 3 seconds the image is visible */
+  40% { left: 350px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
+  41% { left: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
+  100%{ left: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cycle {
+  0%  { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; } /* When you start the slide, the first image is already visible */
+  4%  { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }/* Original Position */
+  16% { left: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
+  20% { left: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1 second exit image */
+  21% { left: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
+  92% { left: -325px; opacity: 0; z-index: 0; }
+  96% { left: -325px; opacity: 0; } /* From 96% to 100% = for 1 second enter image*/
+  100%{ left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+}
+
+@keyframes arrow {
+  0%{
+    transform: translateY(-4rem);
+  }
+  100%{
+    transform: translateY(2rem);
+  }
+}
+

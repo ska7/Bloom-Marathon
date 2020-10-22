@@ -1,10 +1,9 @@
 import React from 'react'
 import ReviewCard from './ReviewCard'
-import morgen from '../img/morgen-pic.jpg'
-import mitro from '../img/mitro-pic.jpg'
+import review from '../img/review.png'
 
 export default function Reviews() {
-    const reviews = [morgen, mitro]
+    const reviews = [review, review]
     return (
         <div className='reviews-section'>
             <div className='reviews-header'>
