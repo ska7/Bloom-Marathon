@@ -7,7 +7,7 @@ export default function ProgramPlan() {
             <div className='header'>
                 <h1>Программа Марафона</h1>
             </div>
-            <div className='lessons-list'>
+            <div id="program" className='lessons-list'>
                 <h2>Урок 1</h2>
                 <span className='lesson'><b> • Самооценка и самоценность</b></span>
                 <h2>Урок 2</h2>

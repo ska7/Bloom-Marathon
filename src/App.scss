@@ -41,10 +41,9 @@ $main-font: 'Amatic SC', cursive;
   }
 }
 
-@media (min-width: 320px) and (max-width: 376px) {
 
   .App {
-    max-width: 375px;
+    max-width: 480px;
   }
 
   .go-to-pricing-wrapper {
@@ -86,67 +85,82 @@ $main-font: 'Amatic SC', cursive;
       }
     } 
 
+        /* NAV*/
+
+        .nav-bar {
+          position: absolute;
+          z-index: 1;
+          background: rgba(231, 212, 231, 0.7);
+          box-shadow: 0 0 50px 5px rgb(85, 85, 85);
+          max-height: 100px;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          flex: 1;
+          .icon-wrapper {
+            max-width: 100%;
+            display: flex;
+            padding-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            p {
+              padding-top: 2px;
+              font-size: 0.8rem;
+              color: rgb(0, 0, 0);
+              // text-shadow: 0 0 3px rgb(41, 41, 41);
+            }
+            .icon {
+              @include display-column;
+              color: white;
+              max-height: 60px;
+              max-width: 60px;
+              border: 2px solid #424242;
+              border-radius: 50%;
+              overflow: hidden;
+              .test-icon {
+                margin-right: 40px;
+              }
+              img {
+                
+                height: 135%;
+                width: 135%;
+              }
+            }
+          }
+        }
+
     /* INTRO SECTION */
 
   .intro {
     position: relative;
-    max-height: 200vh;
-    max-width: 667px;
+    height: auto;
+    width: 100%;
     background: url('./img/background-copy.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     overflow: hidden;
     @include display-column;
 
-    /* NAV*/
-
-    .nav-bar {
-      z-index: 1;
-      background: rgba(231, 212, 231, 0.7);
-      box-shadow: 0 0 50px 5px rgb(85, 85, 85);
-      max-height: 100px;
-      width: 375px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      flex: 1;
-      .icon-wrapper {
-        max-width: 100%;
-        display: flex;
-        padding-top: 20px;
-        flex-direction: column;
-        // justify-content: space-evenly;
-        align-items: center;
-        flex: 1;
-        p {
-          padding-top: 2px;
-          font-size: 0.8rem;
-          // color: #333333;
-          color: rgb(0, 0, 0);
-          text-shadow: 0 0 3px rgb(41, 41, 41);
-        }
-        .icon {
-          @include display-column;
-          color: white;
-          max-height: 60px;
-          max-width: 60px;
-          border: 2px solid #424242;
-          border-radius: 50%;
-          overflow: hidden;
-          img {
-            height: 135%;
-            width: 135%;
-          }
-        }
-      }
+    .marathon-logo {
+      text-align: center;
+      font-family: "Pacifico";
+      font-size: 17px;
+      margin-top: 130px;
+      color: rgb(80, 80, 80);
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      margin-bottom: 35px;
+      max-width: 80%;
     }
-
     .bloom-logo {
-      margin-top: 125px;
       transition: all 0.3s ease;
-      height: 130px;
+      height: auto;
       max-width: 350px;
       img {
         width: 350px;
@@ -154,12 +168,12 @@ $main-font: 'Amatic SC', cursive;
     }
     .if-you-container {
       position: relative;
-      margin-top: 150px;
+      margin-top: 170px;
       margin-bottom: 150px;
       max-width: 375px;
       p { // Если ты надпись
         position: absolute;
-        top: -110px;
+        top: -140px;
         left: 0;
         right: 0;
         margin-right: auto;
@@ -182,7 +196,7 @@ $main-font: 'Amatic SC', cursive;
           background: rgba(255, 255, 255, 0.7) ;
           @include display-column;
           max-height: auto;
-          width: 100%;
+          width: 95%;
         }
         .type:before {
           content: '\257C';
@@ -217,7 +231,7 @@ $main-font: 'Amatic SC', cursive;
         height: 50px;
         background: rgb(125,77,91);
         box-shadow: 0 0 20px 10px rgb(216, 106, 136); 
-        color: #cccccc;
+        color: #f0f0f0;
         border-radius: 20px;
         font-family: 'Amatic SC', cursive;
         font-size: 23px;
@@ -241,18 +255,20 @@ $main-font: 'Amatic SC', cursive;
 
   .benefits {
     height: auto;
-    max-width: 375px;
+    max-width: 100%;
     background: url('./img/background-benefits.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     .benefits-list {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 500px;
-      width: 100%;
+      max-width: 100%;
       margin-left: 5px;
       .benefit {
         font-family: $main-font;
@@ -280,19 +296,22 @@ $main-font: 'Amatic SC', cursive;
     position: relative;
     overflow: visible;
     top: 30%;
-    height: 400px;
+    height: 100%;
     min-width: 100%;
     .mask {
       overflow: hidden;
-      height: 400px;
+      height: 600px;
       ul {
         margin: 0;
         padding: 0;
-        position: relative;
         li {
-          height: 400px;
+          // height: 400px;
           width: auto;
           position: absolute;
+          top: 0;
+          bottom: 0;
+          margin-top: auto;
+          margin-bottom: auto;
           left: -325px;
           list-style: none;
           
@@ -301,15 +320,16 @@ $main-font: 'Amatic SC', cursive;
       .review-card {
         margin-right: 100px;
         top: 5%;
-        height: 400px;
+        height: auto;
         max-width: 70%;
         border-radius: 15px;
-        box-shadow: 2px 10px 20px 3px rgb(133, 133, 133);
-        border: 1px solid rgb(65, 65, 65);
-        background: rgba(204, 204, 204, 0.8);
+        // border: 1px solid rgb(65, 65, 65);
+        // background: rgba(204, 204, 204, 0.8);
         @include display-column;
         img {
-          height: 100%;
+          border:1px solid black;
+          box-shadow: 2px 10px 20px 3px rgb(133, 133, 133);
+          max-height: 100%;
           width: 100%;
           border-radius: 15px;
         }
@@ -317,13 +337,22 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
-  .card1 {
-    animation: cycletwo 10s linear infinite;
-  }
-
   .card0 {
-    animation: cycle 10s linear infinite;
+    animation: cycle 40s linear infinite;
   }
+  .card1 {
+    animation: cycletwo 40s linear infinite;
+  }
+  .card2 {
+    animation: cyclethree 40s linear infinite;
+  }
+  .card3 {
+    animation: cyclefour 40s linear infinite;
+  }
+  .card4 {
+    animation: cyclefive 40s linear infinite;
+  }
+  
 
 
  // The rest of the review section
@@ -335,6 +364,8 @@ $main-font: 'Amatic SC', cursive;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     h1 {
       font-size: 30px;
       padding-top: 15px;
@@ -348,9 +379,10 @@ $main-font: 'Amatic SC', cursive;
       height: 70px;
     }
     .reviews-list {
-      margin-top: 100px;
+      margin-top: 20px;
       padding-bottom: 100px;
-      @include display-row;
+      height: 100%;
+      @include display-column;
     }
   }
 
@@ -358,24 +390,27 @@ $main-font: 'Amatic SC', cursive;
 
   .program-plan-section {
     position: relative;
-    max-width: 375px;
+    max-width: 100%;
     height: auto;
     background: url('./img/back-program.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     padding-bottom: 45px;
     .lessons-list {
       margin-right: auto;
       margin-left: auto;
       margin-top: 45px;
       @include display-column;
-      max-width: 340px;
+      max-width: 80%;
       text-align: center;
       border: 1px solid black;
       background: rgba(255, 255, 255, 0.5);
       border-radius: 20px;
       overflow: hidden;
+      width: 95%;
       h2 {
         padding: 5px;
         color: rgb(255, 255, 255);
@@ -401,59 +436,79 @@ $main-font: 'Amatic SC', cursive;
 
   // Price card
   .prices-wrapper {
-    max-width: 375px;
+    max-width: 100%;
     @include display-column;
-  }
-  .price-card {
-    position: relative;
-    padding-top: 50px;
-    @include display-column;
-    width: 100%;
-    button {
-      font-family: 'Oswald', sans-serif;
-      position: absolute;
-      bottom: 80px;
-      left: 0;
-      right: 0;
+    .price-card {
+      position: relative;
+      @include display-column;
       margin-right: auto;
       margin-left: auto;
-      background: rgba(128, 0, 128, 0.5);
-      // color: rgb(216, 216, 216);
-      color: rgb(53, 53, 53);
-      border-radius: 20px;
-      height: 40px;
-      width: 150px;
-    }
-    img {
-      margin-left: 3px;
-      height: 600px;
-      width: 370px;
-    }
+      max-width: 100%;
+      button {
+        font-family: 'Oswald', sans-serif;
+        position: absolute;
+        bottom: 80px;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        background: rgba(128, 0, 128, 0.5);
+        // color: rgb(216, 216, 216);
+        color: rgb(255, 255, 255);
+        border-radius: 20px;
+        height: 40px;
+        width: 150px;
+      }
+      .cardone img,.cardtwo img {
+        margin-left: 3px;
+        height: auto;
+        width: 370px;
+      }
+      .cardtwo-button {
+        background :rgb(92,134,0);
+        color: white;
+      }
+      .cardthree {
+        position: relative;
+        border: 5px solid black;
+        max-width: 100%;
+        img {
+          margin-left: 5px;
+          height: 800px;
+        }
+      }
+      .cardthree-button {
+        position: absolute;
+        bottom: 140px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        background: rgb(95,28,39);
+        color: white;
+      }
+      .cardfour {
+        position: relative;
+        img {
+          margin-left: 5px;
+          height: 1050px;
+          max-width: 300px;
+        }
+      }
+      .cardfour-button {
+        position: absolute;
+        bottom: 160px;
+        background: rgba(157,193,193, 0.8);
+        color: rgb(0, 0, 0);
+        width: 70%;
+        left: 0;
+        right:0;
+        margin-right: auto;
+        margin-left: auto;
+      }
+                                       
   }
 
-  .cardthree img {
-    margin-left: 5px;
-    height: 800px;
-    width: 370px;
-  }
   
-  .cardfour {
-    img {
-      margin-left: 5px;
-      height: 1050px;
-      width: 340px;
-    }
-    button {
-      position: absolute;
-      bottom: 150px;
-      background: rgba(157,193,193, 0.8);
-      color: rgb(0, 0, 0);
-      width: 250px;
-      left: 0;
-      right:0;
-      margin-right: auto;
-      margin-left: auto;
-    }
   }
   .prices-section {
     height: auto;
@@ -464,6 +519,9 @@ $main-font: 'Amatic SC', cursive;
     background-size: 700px 1200px;
     // background-size: cover;
     background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    max-width: 100%;
     .prices-header {
       height: 70px;
       background: rgba(0, 0, 0, 0.8);
@@ -477,31 +535,211 @@ $main-font: 'Amatic SC', cursive;
     }
   }
 
-}
+  /* Credit Card Info Section */
+  .return-button {
+    font-family: $main-font;
+    width: 70%;
+    border-radius: 15px;
+    background: transparent;
+  }
+  .credit-info-section {
+    min-height: 100vh;
+    width: 100%;
+    background: url('./img/back-price-try.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h2 {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      max-width: 90%;
+      font-size: 25px;
+      font-family: $main-font;
+      padding: 30px;
+    }
+    h3 {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      max-width: 90%;
+      font-size: 30px;
+      color:  rgb(0, 0, 0);
+      font-family: $main-font;
+      padding: 30px;
+    }
+    .credit-card {
+      position: relative;
+      margin-right: auto;
+      margin-left: auto;
+      overflow: hidden;
+      width: 80%;
+      height: 200px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background: rgba(0,0,0, 0.5);
+      @include display-column;
+      input {
+        display: none;
+      }
+      p {
+        font-family: $main-font;
+        color: white;
+        font-size: 35px;
+        max-width: 100%;
+        text-align: center;
+      }
+      button {
+        font-size: 10px;
+        width: 80%;
+        height: 30px;
+        color: rgb(37, 37, 37);
+        background: rgba(240, 240, 240, 0.8);
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 10px;
+        outline: none;
+      }
+    }
+    .blink {
+      position: absolute;
+      height: 100%;
+      width: 50px;
+      background: linear-gradient( to right, transparent, rgb(255, 232, 21), transparent);
+      left: -100px;
+      animation: blink 1s ease;
+    }
+    .ig-page-link {
+      // margin-top: 20px;
+      @include display-column;
+      background: rgba(255, 248, 220, 0.5);
+      height: 50px;
+      width: 70%;
+      border-radius: 15px;
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  /* TEST SECTION */
+
+  .test-section {
+    height: auto;
+    max-width: 100%;
+    background: url('./img/background-copy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    @include display-column;
+    .test-card {
+      border: 1px solid black;
+      max-height: 60%;
+      width: 80%;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      font-family: $main-font;
+      .test-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border: 1px solid red;
+        width: 100%;
+        height: 30%;
+        button {
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 45%;
+          height: 30%;
+          border-radius: 10px;
+          color: white;
+          background: rgb(90, 8, 8);
+        }
+      }
+      .test-question {
+        @include display-column;
+        font-size: 40px;
+        text-align: center;
+        max-height: 70%;
+        max-width: 100%;
+        border: 1px solid yellow;
+      }
+    }
+  }
+
 
 /* ANIMATIONS */
 
-@keyframes cycletwo {
-  0%  { left: -325px; opacity: 0; } /* Original Position */
-  16% { left: -325px; opacity: 0; }/* Starts moving after 16% to this position */
-  20% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
-  24% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
-  36% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; } /* From 24% to 36 % = for 3 seconds the image is visible */
-  40% { left: 350px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
-  41% { left: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
-  100%{ left: -325px; opacity: 0; z-index: -1; }
+@keyframes blink {
+  0%{}
+  100%{
+    transform: translateX(1000px);
+  }
 }
-
+ 
 @keyframes cycle {
-  0%  { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; } /* When you start the slide, the first image is already visible */
-  4%  { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }/* Original Position */
-  16% { left: 0px; opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
+  0%  { left: 0; right: 0; margin-right: auto; margin-left: auto; } /* When you start the slide, the first image is already visible */
+  4%  { left: 0; right: 0; margin-right: auto; margin-left: auto; } /* Original Position */
+  16% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity:1; z-index:0; } /* From 4% to 16 % = for 3 seconds the image is visible */
   20% { left: 325px; opacity: 0; z-index: 0; } /* From 16% to 20% = for 1 second exit image */
   21% { left: -325px; opacity: 0; z-index: -1; } /* Return to Original Position */
   92% { left: -325px; opacity: 0; z-index: 0; }
   96% { left: -325px; opacity: 0; } /* From 96% to 100% = for 1 second enter image*/
   100%{ left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
 }
+
+@keyframes cycletwo {
+  0%  { left: -325px; opacity: 0; } /* Original Position */
+  16% { left: -325px; opacity: 0; }/* Starts moving after 16% to this position */
+  20% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  24% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }  /* From 20% to 24% = for 1 second enter image*/
+  36% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; z-index: 0; }   /* From 24% to 36 % = for 3 seconds the image is visible */
+  40% { left: 325px; opacity: 0; z-index: 0; } /* From 36% to 40% = for 1 second exit image */
+  41% { left: -325px; opacity: 0; z-index: -1; }   /* Return to Original Position */
+  100%{ left: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclethree {
+  0%  { left: -325px; opacity: 0; }
+  36% { left: -325px; opacity: 0; }
+  40% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  44% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  56% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  60% { left: 325px; opacity: 0; z-index: 0; }
+  61% { left: -325px; opacity: 0; z-index: -1; }
+  100%{ left: -325px; opacity: 0; z-index: -1; }
+}
+
+@keyframes cyclefour {
+  0%  { left: -325px; opacity: 0; }
+  56% { left: -325px; opacity: 0; }
+  60% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  64% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  76% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; z-index: 0; }
+  80% { left: 325px; opacity: 0; z-index: 0; }
+  81% { left: -325px; opacity: 0; z-index: -1; }
+  100%{ left: -325px; opacity: 0; z-index: -1; }
+}
+@keyframes cyclefive {
+  0%  { left: -325px; opacity: 0; }
+  76% { left: -325px; opacity: 0; }
+  80% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  84% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  92% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 1; }
+  96% { left: 0; right: 0; margin-right: auto; margin-left: auto; opacity: 0; }
+  100%{ left: 325px; opacity: 0; z-index: 0; }
+}
+
 
 @keyframes arrow {
   0%{
@@ -510,4 +748,19 @@ $main-font: 'Amatic SC', cursive;
   100%{
     transform: translateY(2rem);
   }
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
