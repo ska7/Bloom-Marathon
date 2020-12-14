@@ -40,6 +40,25 @@ $main-font: "Amatic SC", cursive;
   }
 }
 
+@media (min-width: 760px) {
+  .App {
+    margin: 0 auto 0 auto;
+    overflow: hidden;
+  }
+
+  .intro,
+  .nav-bar,
+  .benefits,
+  .credit-info-section,
+  .reviews-section,
+  .test-section,
+  .program-plan-section,
+  .prices-section {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+}
+
 .App {
   max-width: 480px;
 }
@@ -86,10 +105,9 @@ $main-font: "Amatic SC", cursive;
 /* NAV*/
 
 .nav-bar {
-  position: absolute;
+  // position: absolute;
   z-index: 1;
-  background: rgba(231, 212, 231, 0.7);
-  box-shadow: 0 0 50px 5px rgb(85, 85, 85);
+  background: rgb(255, 231, 230);
   max-height: 100px;
   width: 480px;
   display: flex;
@@ -108,7 +126,6 @@ $main-font: "Amatic SC", cursive;
       padding-top: 2px;
       font-size: 0.8rem;
       color: rgb(0, 0, 0);
-      // text-shadow: 0 0 3px rgb(41, 41, 41);
     }
     .icon {
       @include display-column;
@@ -135,7 +152,8 @@ $main-font: "Amatic SC", cursive;
   position: relative;
   height: auto;
   width: 100%;
-  background: url("./img/background-copy.jpg");
+  // background: url("./img/background-copy.jpg");
+  background: rgb(255, 231, 230);
   background-repeat: no-repeat;
   background-size: 480px cover;
   // background-attachment: fixed;
@@ -148,7 +166,7 @@ $main-font: "Amatic SC", cursive;
     text-align: center;
     font-family: "Pacifico";
     font-size: 17px;
-    margin-top: 130px;
+    margin-top: 100px;
     color: rgb(80, 80, 80);
     background: rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -225,7 +243,7 @@ $main-font: "Amatic SC", cursive;
     width: 330px;
     height: 50px;
     background: rgb(125, 77, 91);
-    box-shadow: 0 0 20px 10px rgb(216, 106, 136);
+    // box-shadow: 0 0 20px 10px rgb(216, 106, 136);
     color: #f0f0f0;
     border-radius: 20px;
     font-family: "Amatic SC", cursive;
@@ -383,7 +401,8 @@ $main-font: "Amatic SC", cursive;
   position: relative;
   max-width: 100%;
   height: auto;
-  background: url("./img/back-program.png");
+  background: rgb(228, 202, 195);
+  // background: url("./img/back-program.png");
   background-repeat: no-repeat;
   background-size: cover;
   // background-attachment: fixed;
